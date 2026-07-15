@@ -67,27 +67,58 @@ a:hover {
 }
 
 .openclaw-card,
-.openclaw-hero-card {
+.openclaw-hero-card,
+.openclaw-highlighted-card {
     background: var(--wp--preset--color--openclaw-surface);
     border-radius: var(--openclaw-radius);
     overflow: hidden;
     box-shadow: var(--openclaw-shadow);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .openclaw-card:hover,
-.openclaw-hero-card:hover {
+.openclaw-hero-card:hover,
+.openclaw-highlighted-card:hover {
     box-shadow: var(--openclaw-shadow-hover);
     transform: translateY(-2px);
 }
 
 .openclaw-card img,
 .openclaw-hero-card img,
+.openclaw-highlighted-card img,
 .openclaw-featured-image img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 0;
+}
+
+/*
+ * Highlighted top row on the home template: 2 newest posts, side-by-side on
+ * desktop, stacked on narrow viewports. Cards share the .openclaw-card visual
+ * language above but sit in their own grid container so they collapse
+ * independently of the "More articles" 3-col grid below.
+ */
+.wp-block-post-template.openclaw-highlighted-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .wp-block-post-template.openclaw-highlighted-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.openclaw-highlighted-card {
+    align-self: stretch;
 }
 
 .openclaw-featured-image img {
