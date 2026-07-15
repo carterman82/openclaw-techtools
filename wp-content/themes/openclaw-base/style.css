@@ -122,51 +122,32 @@ a:hover {
 }
 
 /*
- * Card size variety in the long-tail grid.
+ * Long-tail grid: uniform 3-col layout with equal-height cards, tablet at
+ * 2-col, mobile at 1-col. Matches catfancast's seamless-fit pattern where
+ * uniform card sizing eliminates whitespace gaps between rows.
  *
- * Every card uses the same image-top-title-date structure — only grid-column
- * span differs, so featured items are visibly bigger (larger image because the
- * 16:9 aspect ratio scales with card width) but the layout stays uniform.
- *
- * Base grid uses 6-col track with dense auto-flow so wider items get packed
- * without leaving gaps.
- *
- *   default (span 2)     — 3 per row, standard card.
- *   nth-child(5n)        — span 3, medium-large (2 per row when paired).
- *   nth-child(9n)        — span 4, large.
- *
- * Scoped so the highlighted top row and archive grids stay uniform.
+ * Scoped so the highlighted top row (2-col) stays independent.
  */
 .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) {
     display: grid !important;
-    grid-template-columns: repeat(6, 1fr) !important;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 24px;
 }
 
 .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li {
-    grid-column: span 2;
     margin: 0;
     padding: 0;
 }
 
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) {
-    grid-column: span 3;
+@media (max-width: 900px) {
+    .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
 }
 
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(9n) {
-    grid-column: span 4;
-}
-
-/* Mobile: single column, all sizes uniform. */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) {
         grid-template-columns: 1fr !important;
-    }
-    .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li,
-    .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n),
-    .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(9n) {
-        grid-column: span 1;
     }
 }
 
