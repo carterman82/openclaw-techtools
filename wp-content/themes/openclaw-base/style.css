@@ -122,20 +122,20 @@ a:hover {
 }
 
 /*
- * Card variety in the long-tail grid.
+ * Card size variety in the long-tail grid.
  *
- * Base grid moves from WP's default 3-col to a 6-col track so individual cards
- * can occupy 2 (default), 3 (horizontal feature), or 4 (wide feature) columns.
- * grid-auto-flow: dense packs cards tightly so wider items don't leave gaps.
+ * Every card uses the same image-top-title-date structure — only grid-column
+ * span differs, so featured items are visibly bigger (larger image because the
+ * 16:9 aspect ratio scales with card width) but the layout stays uniform.
  *
- * The rotation:
- *   default (span 2)      — image-top, title, date (as before, 3 per row).
- *   nth-child(5n)         — span 3, horizontal image-left layout, excerpt visible.
- *   nth-child(8n+3)       — span 2, text-only "quote card" on primary bg, no image.
- *   nth-child(11n+7)      — span 4, wide feature: image-top, larger title, excerpt.
+ * Base grid uses 6-col track with dense auto-flow so wider items get packed
+ * without leaving gaps.
  *
- * Selectors are scoped to `.wp-block-query:not(.openclaw-highlighted-grid *)` so
- * the highlighted top row and archive grids stay uniform.
+ *   default (span 2)     — 3 per row, standard card.
+ *   nth-child(5n)        — span 3, medium-large (2 per row when paired).
+ *   nth-child(9n)        — span 4, large.
+ *
+ * Scoped so the highlighted top row and archive grids stay uniform.
  */
 .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) {
     display: grid !important;
@@ -150,120 +150,23 @@ a:hover {
     padding: 0;
 }
 
-/* Excerpts are hidden on standard cards to keep the grid tight. */
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li .openclaw-card-excerpt {
-    display: none;
-}
-
-/* Horizontal feature: every 5th card. */
 .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) {
     grid-column: span 3;
 }
 
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) .openclaw-card {
-    display: grid;
-    grid-template-columns: 45% 1fr;
-    align-items: stretch;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) .openclaw-card > figure.wp-block-post-featured-image {
-    margin: 0;
-    height: 100%;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) .openclaw-card > figure.wp-block-post-featured-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: unset;
-    border-radius: 0;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) .openclaw-card-body {
-    padding: 24px 28px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) .openclaw-card-excerpt {
-    display: block;
-}
-
-/* Text-quote card: every 8th card starting from position 3. */
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(8n+3) .openclaw-card {
-    background: var(--wp--preset--color--openclaw-primary);
-    color: var(--wp--preset--color--openclaw-background);
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(8n+3) .openclaw-card > figure.wp-block-post-featured-image {
-    display: none;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(8n+3) .openclaw-card-body {
-    padding: 32px 32px 36px 32px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 240px;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(8n+3) .openclaw-card .wp-block-post-title a,
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(8n+3) .openclaw-card-meta,
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(8n+3) .openclaw-card .wp-block-post-date {
-    color: var(--wp--preset--color--openclaw-background) !important;
-    opacity: 0.95;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(8n+3) .openclaw-card .wp-block-post-title {
-    font-size: 22px !important;
-    line-height: 1.25 !important;
-}
-
-/* Wide feature: every 11th card starting from position 7. */
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(11n+7) {
+.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(9n) {
     grid-column: span 4;
 }
 
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(11n+7) .openclaw-card-body {
-    padding: 28px 36px 32px 36px !important;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(11n+7) .openclaw-card .wp-block-post-title {
-    font-size: 26px !important;
-    line-height: 1.2 !important;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(11n+7) .openclaw-card-excerpt {
-    display: block;
-}
-
-/*
- * Precedence: if a card matches both the 8n+3 (text-quote) rule and the
- * 5n (horizontal) rule, favor the text-quote variant (visually more distinct).
- * We revert the span 3 override so the text-quote card stays span 2.
- */
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n):nth-child(8n+3) {
-    grid-column: span 2;
-}
-
-.wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n):nth-child(8n+3) .openclaw-card {
-    grid-template-columns: none;
-    display: block;
-}
-
-/* Mobile: everything collapses to one column, all variants become uniform. */
+/* Mobile: single column, all sizes uniform. */
 @media (max-width: 700px) {
     .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) {
         grid-template-columns: 1fr !important;
     }
     .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li,
     .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n),
-    .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(11n+7) {
+    .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(9n) {
         grid-column: span 1;
-    }
-    .wp-block-post-template.is-layout-grid:not(.openclaw-highlighted-grid) > li:nth-child(5n) .openclaw-card {
-        grid-template-columns: 1fr;
     }
 }
 
