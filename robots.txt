@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap: https://carterman82.github.io/openclaw-techtools/wp-sitemap.xml
+Sitemap: https://www.reggaefancast.com/openclaw-techtools/wp-sitemap.xml
