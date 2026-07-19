@@ -12,7 +12,7 @@
 	<atom:link href="https://www.reggaefancast.com/openclaw-techtools/tag/debugging/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.reggaefancast.com/openclaw-techtools/tag/debugging/</link>
 	<description></description>
-	<lastBuildDate>Sun, 19 Jul 2026 21:11:34 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 19 Jul 2026 21:22:13 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -84,7 +84,7 @@
 <li>Turn the Zap off, make your edits, turn it back on.</li>
 <li>Replay only if the original trigger data is still valid for the fix you made. If it is not, trigger a fresh live run instead.</li>
 </ol>
-<p>Replaying a task before fixing the Zap just generates another failed task with identical log output. It feels productive and accomplishes nothing. The <a href="http://localhost:8088/2026/07/11/automation-error-handling-failure-architecture/">automation error handling guide on this site</a> covers the broader pattern of building failure recovery into workflows before a problem happens. For in-the-moment debugging, replay is your scalpel, not your first move.</p>
+<p>Replaying a task before fixing the Zap just generates another failed task with identical log output. It feels productive and accomplishes nothing. The <a href="https://www.reggaefancast.com/openclaw-techtools/2026/07/11/automation-error-handling-failure-architecture/">automation error handling guide on this site</a> covers the broader pattern of building failure recovery into workflows before a problem happens. For in-the-moment debugging, replay is your scalpel, not your first move.</p>
 <h2>Task History Limits and What You Might Be Missing</h2>
 <p>Zapier&#8217;s Task History retention depends on your plan. On the Free and Starter tiers, Zapier retains task history for a limited window, typically seven days, though plan terms vary. On Professional and higher plans, history extends to longer windows. <a  href="https://zapier.com/help/manage/history/view-and-manage-your-zap-history" rel="noopener" target="_blank">Zapier&#8217;s official documentation on Task History</a> has the current plan-specific retention numbers.</p>
 <p>What this means practically: if your Zap broke on Monday and you are investigating Thursday, the log may still be there. If you are on a lower tier and investigating a week-old failure, it may be gone. This is the single best argument for adding a logging step to any business-critical Zap. A simple action that writes each run&#8217;s key fields, trigger ID, timestamp, status value, and output ID, to a Google Sheet or Airtable table creates a permanent record that survives Zapier&#8217;s retention window and is infinitely easier to search.</p>
@@ -97,7 +97,7 @@
 <li>After the test run completes, open the execution log for that test task. Check the Input panel of every action step. Verify no field shows empty when it should not.</li>
 <li>Check the Output panel and confirm the returned record ID or confirmation data looks right. For a create row in Sheet action, that means the row ID should be a real number, not null. For a CRM create action, verify the contact ID matches a real record.</li>
 </ol>
-<p>This takes five minutes on a simple Zap and maybe fifteen on a complex multi-step one. It is the pre-flight that prevents the forty-seven runs, empty Sheet situation from the opening of this article. For more complex multi-step workflows, the output-first design approach covered in <a href="http://localhost:8088/2026/07/14/multi-step-automation-output-first-design/">this guide on multi-step automation logic</a> is the structural complement. Design backward from the result, then audit forward through the log.</p>
+<p>This takes five minutes on a simple Zap and maybe fifteen on a complex multi-step one. It is the pre-flight that prevents the forty-seven runs, empty Sheet situation from the opening of this article. For more complex multi-step workflows, the output-first design approach covered in <a href="https://www.reggaefancast.com/openclaw-techtools/2026/07/14/multi-step-automation-output-first-design/">this guide on multi-step automation logic</a> is the structural complement. Design backward from the result, then audit forward through the log.</p>
 <h2>When the Log Doesn&#8217;t Tell You Enough</h2>
 <p>The execution log is a good witness, but it has limits. Two situations where it falls short:</p>
 <p><strong>Third-party API errors with vague messages.</strong> When an action step fails with an error like Bad Request or 422 Unprocessable Entity, the Output panel shows Zapier&#8217;s formatted version of the error, not the raw API response. Sometimes the detail you need is buried in a field like <em>error_description</em> or <em>message</em> inside the response body. Zapier surfaces some of this but not always all of it. If the log gives you a generic error, check the connected app&#8217;s own activity log, HubSpot&#8217;s audit log, Slack&#8217;s workspace logs, or Airtable&#8217;s revision history, to see what actually arrived.</p>

@@ -12,7 +12,7 @@
 	<atom:link href="https://www.reggaefancast.com/openclaw-techtools/tag/error-handling/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.reggaefancast.com/openclaw-techtools/tag/error-handling/</link>
 	<description></description>
-	<lastBuildDate>Sun, 19 Jul 2026 21:11:36 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 19 Jul 2026 21:22:14 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -60,7 +60,7 @@
 <p>This failure architecture works well for workflows that process discrete records, one contact, one order, one form submission. It works less well for aggregation workflows that pull data from multiple sources and combine them. When those fail partway through, you often don&#8217;t know how much data made it before the failure, which creates reconciliation headaches no error handler fully solves.</p>
 <p>For high-stakes aggregation workflows, break them into smaller discrete operations with checkpoints. Each stage writes its output to a staging table in Airtable or Google Sheets before the next stage reads it. That makes failures easy to spot and easy to resume from the exact point of failure, without reprocessing everything from scratch.</p>
 <p>One more cost to name honestly: error handling adds steps to every workflow, which means more tasks in Zapier (where you pay per task) or more operations in Make. A full failure-branch path can nearly double a workflow&#8217;s step count. Factor that into your plan sizing before you build.</p>
-<p>If you&#8217;re deciding which platform to use before building something new, the <a href="http://localhost:8088/zapier-vs-make-automation-logic/">Zapier vs. Make comparison on this site</a> covers how their underlying logic models affect branching scenarios exactly like this. Make&#8217;s native error handlers give it a structural edge for complex workflows; Zapier&#8217;s Paths work well for simpler two-branch cases.</p>
+<p>If you&#8217;re deciding which platform to use before building something new, the <a href="https://www.reggaefancast.com/openclaw-techtools/2026/07/02/zapier-vs-make-automation-logic/">Zapier vs. Make comparison on this site</a> covers how their underlying logic models affect branching scenarios exactly like this. Make&#8217;s native error handlers give it a structural edge for complex workflows; Zapier&#8217;s Paths work well for simpler two-branch cases.</p>
 <h2>A Heuristic Worth Writing Down</h2>
 <p>Any automation that touches a customer-facing output, an email, a Slack message, a CRM record, an invoice, should have at least one retry for transient failures, a human-review step for data failures, and a structural alert if it fails three times in a row. That&#8217;s the full three-layer response, and it fits in a fifteen-minute build session once you&#8217;ve done it a couple of times.</p>
 <p>Automations that touch purely internal data (syncing a spreadsheet, updating a tag) can get away with something simpler: retry once, log the failure to a sheet, and move on. The cost of a failed internal sync is lower than the cost of a customer who never got their confirmation email.</p>
