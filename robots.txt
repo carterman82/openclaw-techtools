@@ -3,6 +3,6 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.reggaefancast.com/openclaw-techtools/sitemap_index.xml
+Sitemap: https://techtools.info-verse.org/sitemap_index.xml
 # ---------------------------
 # END YOAST BLOCK

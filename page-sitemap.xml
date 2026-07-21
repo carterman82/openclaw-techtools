@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://www.reggaefancast.com/openclaw-techtools/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://techtools.info-verse.org/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://www.reggaefancast.com/openclaw-techtools/</loc>
+		<loc>https://techtools.info-verse.org/</loc>
 	</url>
 	<url>
-		<loc>https://www.reggaefancast.com/openclaw-techtools/home/</loc>
+		<loc>https://techtools.info-verse.org/home/</loc>
 		<lastmod>2026-07-01T20:24:36+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://www.reggaefancast.com/openclaw-techtools/sample-page/</loc>
+		<loc>https://techtools.info-verse.org/sample-page/</loc>
 		<lastmod>2026-07-15T00:58:46+00:00</lastmod>
 	</url>
 </urlset>
