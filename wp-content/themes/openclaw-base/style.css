@@ -277,6 +277,34 @@ a:hover {
     border-bottom-color: var(--wp--preset--color--openclaw-primary);
 }
 
+.openclaw-ad-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px auto;
+    background: var(--wp--preset--color--openclaw-surface);
+    border-radius: var(--openclaw-radius);
+    overflow: hidden;
+}
+
+/* Reserved heights approximate the responsive ad formats each slot will
+   carry, so an unfilled slot doesn't shift layout once ads start serving
+   (CLS target < 0.1). Leaderboard: 320x50 mobile / 728x90 desktop.
+   In-content: 300x250 medium rectangle at all widths. */
+.openclaw-ad-slot--leaderboard {
+    min-height: 50px;
+    max-width: 728px;
+}
+
+.openclaw-ad-slot--in-content {
+    min-height: 250px;
+    max-width: 336px;
+}
+
+@media (min-width: 601px) {
+    .openclaw-ad-slot--leaderboard { min-height: 90px; }
+}
+
 .openclaw-related {
     margin-top: 64px;
     padding-top: 48px;

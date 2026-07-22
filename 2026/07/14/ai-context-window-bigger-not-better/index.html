@@ -226,6 +226,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
         <h1 style="font-weight:700;line-height:1.1;letter-spacing:-0.02em; margin-top:0;margin-bottom:24px;" class="wp-block-post-title has-4-xl-font-size">AI Context Windows Are Bigger Than Ever. That&rsquo;s Not the Problem You Think It Is.</h1>
 
+        
+        <div class="openclaw-ad-slot openclaw-ad-slot--leaderboard" data-slot-id="post-top"></div>
+        
+
         <div class="entry-content wp-block-post-content has-global-padding is-layout-constrained wp-container-core-post-content-is-layout-1 wp-block-post-content-is-layout-constrained"><p>Everyone agrees that bigger AI context windows are a good thing. More room for documents, more room for conversation history, more room for instructions. Nobody mentions that past a certain point, every extra token you feed in makes the model <em>worse</em> at using what you actually care about. The more space you give an LLM, the more likely it is to lose your most important content inside the noise you packed around it.</p>
 <p>This isn&rsquo;t a quirk of any one model. It&rsquo;s a consistent, documented failure mode in how large language models process long inputs. Understanding it changes how you prompt, what you include, and where you place the information that actually needs to show up in the answer.</p>
 <nav class="openclaw-toc" aria-label="Table of contents"><p class="openclaw-toc-title">Contents</p><ol><li><a href="#openclaw-h2-the-lost-in-the-middle-finding-most-users-never-hear-about">The &ldquo;Lost in the Middle&rdquo; Finding Most Users Never Hear About</a></li><li><a href="#openclaw-h2-why-it-happens">Why It Happens</a></li><li><a href="#openclaw-h2-three-ways-smart-users-still-get-this-wrong">Three Ways Smart Users Still Get This Wrong</a></li><li><a href="#openclaw-h2-the-bracket-and-compress-rule">The Bracket-and-Compress Rule</a></li><li><a href="#openclaw-h2-the-model-size-temptation">The Model Size Temptation</a></li><li><a href="#openclaw-h2-where-large-context-windows-actually-earn-their-keep">Where Large Context Windows Actually Earn Their Keep</a></li><li><a href="#openclaw-h2-the-default-prompt-structure-worth-stealing">The Default Prompt Structure Worth Stealing</a></li><li><a href="#openclaw-h2-the-real-constraint-is-attention-not-tokens">The Real Constraint Is Attention, Not Tokens</a></li></ol></nav><h2 id="openclaw-h2-the-lost-in-the-middle-finding-most-users-never-hear-about">The &ldquo;Lost in the Middle&rdquo; Finding Most Users Never Hear About</h2>
@@ -244,6 +248,8 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <p>Each pattern is the same structural mistake: assuming the model&rsquo;s reading is linear and uniform. It isn&rsquo;t.</p>
 <h2 id="openclaw-h2-the-bracket-and-compress-rule">The Bracket-and-Compress Rule</h2>
 <p>The most actionable reframe from Liu et al. is positional. If you can&rsquo;t avoid a long context, the information you most need the model to honor belongs at the top or the bottom, not the middle. Here&rsquo;s a practical test you can run right now:</p>
+<div class="openclaw-ad-slot openclaw-ad-slot--in-content" data-slot-id="post-mid"></div>
+
 <p>Before you submit any long prompt, ask where your single most important instruction sits. If the answer is &ldquo;somewhere in the middle,&rdquo; move it. Put it first, repeat a compressed version of it last, and treat the middle as supporting material the model may or may not weight appropriately.</p>
 <p>Call this the Bracket-and-Compress rule: bracket your critical content at the edges, compress the supporting bulk into the middle. It costs 60 seconds and reliably improves output quality on long inputs.</p>
 <p>For document summarization specifically: don&rsquo;t paste the whole document and ask for a summary. Extract the sections that matter to your use case, paste those, and label them explicitly. &ldquo;The following is the pricing section of a vendor contract. Identify any automatic renewal clauses.&rdquo; A 400-token focused context outperforms a 4,000-token full-document paste for that task every time.</p>
@@ -269,6 +275,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <p>Token limits were the old ceiling. The new ceiling is attention quality, and it doesn&rsquo;t scale linearly with context size. You can give a model 128,000 tokens and still get a worse answer than you&rsquo;d get from a 3,000-token prompt built with the Bracket-and-Compress structure in mind.</p>
 <p>The teams who get the most out of AI tools are not the ones using the biggest context windows. They&rsquo;re the ones who&rsquo;ve learned to treat context as a scarce resource even when it technically isn&rsquo;t. More room to write doesn&rsquo;t mean more room to be careless. It means more room to make structural mistakes without immediately noticing them.</p>
 </div>
+
+        
+        <div class="openclaw-ad-slot openclaw-ad-slot--in-content" data-slot-id="post-end"></div>
+        
 
         <section class="openclaw-related">
 <h2 class="openclaw-related-heading">More from this site</h2>

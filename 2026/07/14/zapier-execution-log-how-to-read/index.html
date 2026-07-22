@@ -226,6 +226,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
         <h1 style="font-weight:700;line-height:1.1;letter-spacing:-0.02em; margin-top:0;margin-bottom:24px;" class="wp-block-post-title has-4-xl-font-size">Your Zapier Zap Ran. Nothing Happened. Here&rsquo;s How to Read the Execution Log.</h1>
 
+        
+        <div class="openclaw-ad-slot openclaw-ad-slot--leaderboard" data-slot-id="post-top"></div>
+        
+
         <div class="entry-content wp-block-post-content has-global-padding is-layout-constrained wp-container-core-post-content-is-layout-1 wp-block-post-content-is-layout-constrained"><p>You click into Task History, scroll past forty-seven green checkmarks, and open the last row. The status says Success. The Google Sheet stays empty. That is the exact moment most operators open a support ticket, blame the integration, or start rebuilding from scratch. The real problem was a single unchecked field mapping, visible in plain text inside the Zapier execution log, if you know where to look.</p>
 <p>Reading the Zapier execution log is not difficult. The interface just trains you to trust the color coding, which leads to three very specific blind spots. This guide walks through the log field by field, names the places it quietly misleads you, and gives you a repeatable debugging method you can finish in under ten minutes.</p>
 <nav class="openclaw-toc" aria-label="Table of contents"><p class="openclaw-toc-title">Contents</p><ol><li><a href="#openclaw-h2-what-the-execution-log-actually-is-and-where-to-find-it">What the Execution Log Actually Is (and Where to Find It)</a></li><li><a href="#openclaw-h2-how-to-read-the-zapier-execution-log-step-by-step">How to Read the Zapier Execution Log Step by Step</a></li><li><a href="#openclaw-h2-the-green-success-trap">The Green Success Trap</a></li><li><a href="#openclaw-h2-using-the-replay-button-without-making-things-worse">Using the Replay Button Without Making Things Worse</a></li><li><a href="#openclaw-h2-task-history-limits-and-what-you-might-be-missing">Task History Limits and What You Might Be Missing</a></li><li><a href="#openclaw-h2-the-field-mapping-audit-a-pre-launch-habit-that-prevents-all-of-this">The Field-Mapping Audit: A Pre-Launch Habit That Prevents All of This</a></li><li><a href="#openclaw-h2-when-the-log-doesnt-tell-you-enough">When the Log Doesn&rsquo;t Tell You Enough</a></li><li><a href="#openclaw-h2-frequently-asked-questions">Frequently Asked Questions</a></li><li><a href="#openclaw-h2-the-log-is-already-there-use-it">The Log Is Already There. Use It.</a></li></ol></nav><h2 id="openclaw-h2-what-the-execution-log-actually-is-and-where-to-find-it">What the Execution Log Actually Is (and Where to Find It)</h2>
@@ -268,6 +272,8 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <p>Zapier lets you replay any failed or stopped task directly from the execution log. That button is genuinely useful. It is also easy to misuse.</p>
 <p>Replaying a task re-runs the Zap against the exact same trigger data from the original run. It does not re-fetch live data from the source app. If you replay a task because you changed something in a connected Google Sheet, the replayed run uses the row data from the original trigger, not the current Sheet state. You will just generate another failure with identical log output.</p>
 <p>The right sequence when debugging and replaying:</p>
+<div class="openclaw-ad-slot openclaw-ad-slot--in-content" data-slot-id="post-mid"></div>
+
 <ol>
 <li>Identify the problem in the execution log, check the Input versus Output mismatch, filter mismatch, or empty field.</li>
 <li>Fix the root cause in the Zap editor or the source app.</li>
@@ -307,6 +313,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <p>Every Zap run is already being recorded. Zapier writes the full input, output, and status of every step by default, on every plan, for every workflow. Most users never open it unless something visibly breaks. The people who check it proactively are the ones who catch silent failures before they compound into weeks of missing data.</p>
 <p>The execution log does not require any setup, any add-ons, or any code. It requires knowing which panels to open and what distinction to make between Input and Output. The green checkmark is not the finish line. The Input panel is where the actual answer lives. Treat it like one, and your automations stop being a mystery.</p>
 </div>
+
+        
+        <div class="openclaw-ad-slot openclaw-ad-slot--in-content" data-slot-id="post-end"></div>
+        
 
         <section class="openclaw-related">
 <h2 class="openclaw-related-heading">More from this site</h2>

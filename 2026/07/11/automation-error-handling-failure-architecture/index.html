@@ -226,6 +226,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
         <h1 style="font-weight:700;line-height:1.1;letter-spacing:-0.02em; margin-top:0;margin-bottom:24px;" class="wp-block-post-title has-4-xl-font-size">Error Handling Is the Automation Work Nobody Does. That&rsquo;s Why Your Zaps Break at Midnight.</h1>
 
+        
+        <div class="openclaw-ad-slot openclaw-ad-slot--leaderboard" data-slot-id="post-top"></div>
+        
+
         <div class="entry-content wp-block-post-content has-global-padding is-layout-constrained wp-container-core-post-content-is-layout-1 wp-block-post-content-is-layout-constrained"><p>Automation error handling was the last thing on your mind when you built the workflow. You tested it twice, watched it run clean, and closed the tab. Three days later you open your inbox to a pile of unsent client emails, a Slack channel that went silent, and a task history that just says &ldquo;failed.&rdquo; The workflow looks fine. The logs disagree. This is the part of automation nobody talks about: what happens when the happy path ends.</p>
 <p>Most tutorials stop the moment something runs without errors. That&rsquo;s exactly where the problem starts. A workflow with no error handling isn&rsquo;t finished, it&rsquo;s a ticking clock. And the clock goes off at the worst possible moment: when you&rsquo;re asleep, on a call, or mid-deadline.</p>
 <nav class="openclaw-toc" aria-label="Table of contents"><p class="openclaw-toc-title">Contents</p><ol><li><a href="#openclaw-h2-why-automations-break-in-ways-that-surprise-you">Why Automations Break in Ways That Surprise You</a></li><li><a href="#openclaw-h2-the-three-failure-types-worth-planning-for">The Three Failure Types Worth Planning For</a></li><li><a href="#openclaw-h2-how-to-build-automation-error-handling-in-zapier-or-make">How to Build Automation Error Handling in Zapier or Make</a></li><li><a href="#openclaw-h2-where-this-approach-breaks-down">Where This Approach Breaks Down</a></li><li><a href="#openclaw-h2-a-heuristic-worth-writing-down">A Heuristic Worth Writing Down</a></li></ol></nav><h2 id="openclaw-h2-why-automations-break-in-ways-that-surprise-you">Why Automations Break in Ways That Surprise You</h2>
@@ -241,6 +245,8 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <h2 id="openclaw-h2-how-to-build-automation-error-handling-in-zapier-or-make">How to Build Automation Error Handling in Zapier or Make</h2>
 <p>In Zapier, the most practical tool is the <strong>Paths</strong> step combined with <strong>Filter</strong> logic. After any step that could fail, add a path that checks whether the step returned a usable result. If the output is empty, null, or contains an error string, route that record down the error branch instead of the success branch. On the error branch: log the failure to a Google Sheet or Airtable row, post a formatted Slack message to a dedicated errors channel, and optionally fire a second attempt after a short delay.</p>
 <p>In Make, error handling is more explicit. Every module has a native error handler you can attach by right-clicking the module and selecting &ldquo;Add error handler.&rdquo; Make offers four handler types: Resume (skip the broken step and continue), Ignore (pretend it succeeded), Rollback (undo everything this run did), and Break (stop and flag the run as incomplete so you can resume manually). For most production workflows, <strong>Break</strong> is the right default. It stops the run without data loss, flags it in Make&rsquo;s incomplete executions queue, and lets you re-run after fixing the issue.</p>
+<div class="openclaw-ad-slot openclaw-ad-slot--in-content" data-slot-id="post-mid"></div>
+
 <p>Neither tool sets any of this up for you. You add the handlers. That&rsquo;s the discipline most builders skip.</p>
 <h3>The Dedicated Error Channel</h3>
 <p>The single highest-leverage change you can make to your automation stack is creating one Slack channel, call it <strong>#automation-errors</strong>, and routing every failure there. Not your general inbox. Not a shared team channel where alerts drown in noise. One place, one purpose.</p>
@@ -256,6 +262,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <p>Automations that touch purely internal data (syncing a spreadsheet, updating a tag) can get away with something simpler: retry once, log the failure to a sheet, and move on. The cost of a failed internal sync is lower than the cost of a customer who never got their confirmation email.</p>
 <p>An automation that runs without errors is just a workflow that hasn&rsquo;t been tested by the real world yet. Build the failure path before the failure path builds itself for you.</p>
 </div>
+
+        
+        <div class="openclaw-ad-slot openclaw-ad-slot--in-content" data-slot-id="post-end"></div>
+        
 
         <section class="openclaw-related">
 <h2 class="openclaw-related-heading">More from this site</h2>
