@@ -382,7 +382,7 @@
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/tag/saas/</loc>
-		<lastmod>2026-07-19T21:22:16+00:00</lastmod>
+		<lastmod>2026-07-26T20:10:00+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/tag/sales/</loc>
@@ -391,6 +391,10 @@
 	<url>
 		<loc>https://techtools.info-verse.org/tag/sales-cycle/</loc>
 		<lastmod>2026-07-19T21:11:32+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/tag/scaling/</loc>
+		<lastmod>2026-07-26T20:10:00+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/tag/scheduling/</loc>
@@ -413,8 +417,16 @@
 		<lastmod>2026-07-19T21:11:32+00:00</lastmod>
 	</url>
 	<url>
+		<loc>https://techtools.info-verse.org/tag/startups/</loc>
+		<lastmod>2026-07-26T20:10:00+00:00</lastmod>
+	</url>
+	<url>
 		<loc>https://techtools.info-verse.org/tag/task-management/</loc>
 		<lastmod>2026-07-19T21:22:14+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/tag/tech-stacks/</loc>
+		<lastmod>2026-07-26T20:10:00+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/tag/testing/</loc>
@@ -438,7 +450,7 @@
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/tag/tools/</loc>
-		<lastmod>2026-07-19T21:22:14+00:00</lastmod>
+		<lastmod>2026-07-26T20:10:00+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/tag/typography/</loc>
