@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://techtools.info-verse.org/</loc>
-		<lastmod>2026-07-27T01:53:22+00:00</lastmod>
+		<lastmod>2026-07-30T01:09:25+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/2026/07/16/client-owes-money-when-to-walk-away-vs-sue/</loc>
@@ -313,13 +313,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://techtools.info-verse.org/2026/07/24/hiring-mistake-costs-six-months-reference-check/</loc>
-		<lastmod>2026-07-24T01:41:52+00:00</lastmod>
-		<image:image>
-			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/hiring-mistake-costs-six-months-reference-check-featured.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://techtools.info-verse.org/2026/07/24/freelance-rate-is-filter/</loc>
 		<lastmod>2026-07-24T19:55:04+00:00</lastmod>
 		<image:image>
@@ -370,9 +363,65 @@
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/2026/07/27/llc-vs-sole-proprietorship-tech-founders/</loc>
-		<lastmod>2026-07-27T01:53:22+00:00</lastmod>
+		<lastmod>2026-07-27T05:21:13+00:00</lastmod>
 		<image:image>
 			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/llc-vs-sole-proprietorship-tech-founders-featured.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/24/hiring-mistake-costs-six-months-reference-check/</loc>
+		<lastmod>2026-07-27T05:21:28+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/hiring-mistake-costs-six-months-reference-check-featured.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/27/four-year-vesting-schedule-saves-50-50-founder-split/</loc>
+		<lastmod>2026-07-27T14:44:09+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/four-year-vesting-schedule-saves-50-50-founder-split-featured.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/28/second-brain-audit-note-taking-app-junk-drawer/</loc>
+		<lastmod>2026-07-28T13:40:00+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/second-brain-audit-note-taking-app-junk-drawer-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/28/ai-resume-screener-rejects-top-talent/</loc>
+		<lastmod>2026-07-28T18:37:26+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/ai-resume-screener-rejects-top-talent-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/29/3-person-org-chart-solo-founders/</loc>
+		<lastmod>2026-07-29T00:33:41+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/3-person-org-chart-solo-founders-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/29/annual-report-design-architecture/</loc>
+		<lastmod>2026-07-29T13:29:11+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/annual-report-design-architecture-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/29/client-handoff-one-pager-automation/</loc>
+		<lastmod>2026-07-29T18:29:27+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/client-handoff-one-pager-automation-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/30/ai-output-over-optimized/</loc>
+		<lastmod>2026-07-30T01:09:25+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/ai-output-over-optimized-featured.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
