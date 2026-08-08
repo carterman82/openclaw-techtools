@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://techtools.info-verse.org/</loc>
-		<lastmod>2026-08-08T21:16:02+00:00</lastmod>
+		<lastmod>2026-08-08T22:29:43+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/2026/07/16/client-owes-money-when-to-walk-away-vs-sue/</loc>
@@ -131,13 +131,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://techtools.info-verse.org/2026/07/11/project-management-tools-compared-best-picks/</loc>
-		<lastmod>2026-07-19T21:22:14+00:00</lastmod>
-		<image:image>
-			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/project-management-tools-compared-best-picks-featured.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://techtools.info-verse.org/2026/07/11/automation-error-handling-failure-architecture/</loc>
 		<lastmod>2026-07-19T21:22:14+00:00</lastmod>
 		<image:image>
@@ -205,13 +198,6 @@
 		<lastmod>2026-07-19T21:22:15+00:00</lastmod>
 		<image:image>
 			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/price-anchoring-pricing-page-strategy-featured.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://techtools.info-verse.org/2026/07/10/onboarding-email-sequence-mistakes-fixes/</loc>
-		<lastmod>2026-07-19T21:22:15+00:00</lastmod>
-		<image:image>
-			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/onboarding-email-sequence-mistakes-fixes-featured.png</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -327,20 +313,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://techtools.info-verse.org/2026/07/25/404-page-is-best-salesperson-math/</loc>
-		<lastmod>2026-07-25T19:43:21+00:00</lastmod>
-		<image:image>
-			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/404-page-is-best-salesperson-math-featured.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://techtools.info-verse.org/2026/07/26/startup-tech-stacks-scale-without-enterprise-cost/</loc>
-		<lastmod>2026-07-26T20:10:00+00:00</lastmod>
-		<image:image>
-			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/startup-tech-stacks-scale-without-enterprise-cost-featured.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://techtools.info-verse.org/2026/07/26/50-50-founder-split-liquidity-crisis/</loc>
 		<lastmod>2026-07-26T20:34:41+00:00</lastmod>
 		<image:image>
@@ -415,13 +387,6 @@
 		<lastmod>2026-07-30T01:09:25+00:00</lastmod>
 		<image:image>
 			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/ai-output-over-optimized-featured.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://techtools.info-verse.org/2026/07/30/paid-scoping-phase-freelance-client-filter-2/</loc>
-		<lastmod>2026-07-30T17:55:08+00:00</lastmod>
-		<image:image>
-			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/paid-scoping-phase-freelance-client-filter-featured.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -548,6 +513,41 @@
 		<lastmod>2026-08-08T21:16:02+00:00</lastmod>
 		<image:image>
 			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/how-to-automate-emails-outlook-featured.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/30/paid-scoping-phase-freelance-client-filter-2/</loc>
+		<lastmod>2026-08-08T22:25:03+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/paid-scoping-phase-freelance-client-filter-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/26/startup-tech-stacks-scale-without-enterprise-cost/</loc>
+		<lastmod>2026-08-08T22:25:27+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/startup-tech-stacks-scale-without-enterprise-cost-featured.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/11/project-management-tools-compared-best-picks/</loc>
+		<lastmod>2026-08-08T22:25:55+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/project-management-tools-compared-best-picks-featured.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/25/404-page-is-best-salesperson-math/</loc>
+		<lastmod>2026-08-08T22:28:33+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/404-page-is-best-salesperson-math-featured.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/07/10/onboarding-email-sequence-mistakes-fixes/</loc>
+		<lastmod>2026-08-08T22:29:43+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/07/onboarding-email-sequence-mistakes-fixes-featured.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
