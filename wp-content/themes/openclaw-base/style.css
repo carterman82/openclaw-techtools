@@ -513,6 +513,20 @@ a:hover {
     color: var(--wp--preset--color--openclaw-primary);
 }
 
+.openclaw-sponsored-link {
+    margin: -16px 0 24px 0;
+    font-size: 12px;
+}
+
+.openclaw-sponsored-link a {
+    color: var(--wp--preset--color--openclaw-muted);
+    text-decoration: underline;
+}
+
+.openclaw-sponsored-link a:hover {
+    color: var(--wp--preset--color--openclaw-primary);
+}
+
 /* Newsletter form (Step 9.4). */
 .openclaw-newsletter-form {
     display: flex;
