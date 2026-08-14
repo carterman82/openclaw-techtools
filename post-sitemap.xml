@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://techtools.info-verse.org/</loc>
-		<lastmod>2026-08-14T13:50:33+00:00</lastmod>
+		<lastmod>2026-08-14T18:51:48+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/2026/07/16/client-owes-money-when-to-walk-away-vs-sue/</loc>
@@ -618,6 +618,13 @@
 		<lastmod>2026-08-14T13:50:33+00:00</lastmod>
 		<image:image>
 			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/08/softr-airtable-client-portal-make-architecture-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/08/14/freshbooks-quickbooks-wave-1000-invoice-rule/</loc>
+		<lastmod>2026-08-14T18:51:48+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/08/freshbooks-quickbooks-wave-1000-invoice-rule-featured.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
