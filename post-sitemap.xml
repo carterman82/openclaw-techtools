@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://techtools.info-verse.org/</loc>
-		<lastmod>2026-08-12T18:51:45+00:00</lastmod>
+		<lastmod>2026-08-14T00:43:45+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://techtools.info-verse.org/2026/07/16/client-owes-money-when-to-walk-away-vs-sue/</loc>
@@ -583,6 +583,34 @@
 		<lastmod>2026-08-12T18:51:45+00:00</lastmod>
 		<image:image>
 			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/08/cursor-vs-windsurf-vs-replit-ai-workflow-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/08/13/cursor-autocomplete-agent-mode-bottleneck/</loc>
+		<lastmod>2026-08-13T00:40:38+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/08/cursor-autocomplete-agent-mode-bottleneck-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/08/13/48-hour-rule-ghosted-client/</loc>
+		<lastmod>2026-08-13T13:47:29+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/08/48-hour-rule-ghosted-client-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/08/13/n8n-zapier-local-first-workflow/</loc>
+		<lastmod>2026-08-13T18:51:32+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/08/n8n-zapier-local-first-workflow-featured.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://techtools.info-verse.org/2026/08/14/ai-writing-tools-1000-word-rule-freelance/</loc>
+		<lastmod>2026-08-14T00:43:45+00:00</lastmod>
+		<image:image>
+			<image:loc>https://techtools.info-verse.org/wp-content/uploads/sites/6/2026/08/ai-writing-tools-1000-word-rule-freelance-featured.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
