@@ -19,7 +19,7 @@ gtag('config', 'G-EMJRNCZR10');
 	<link rel="canonical" href="https://techtools.info-verse.org/2026/07/29/annual-report-design-architecture/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Annual Report Design: Architecture, Not Marketing">
+	<meta property="og:title" content="Your Annual Report Design Isn&rsquo;t Marketing. It&rsquo;s Architecture.">
 	<meta property="og:description" content="Most annual reports fail because they are designed as marketing, not architecture. Here is how to build a report that conveys trust, scale, and institutional permanence through physical weight and spatial hierarchy.">
 	<meta property="og:url" content="https://techtools.info-verse.org/2026/07/29/annual-report-design-architecture/">
 	<meta property="og:site_name" content="Tech Tools Info Verse">
@@ -42,9 +42,7 @@ gtag('config', 'G-EMJRNCZR10');
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Feed" href="https://techtools.info-verse.org/feed/">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Comments Feed" href="https://techtools.info-verse.org/comments/feed/">
-<meta property="og:url" content="https://techtools.info-verse.org/">
-<meta property="og:title" content="Annual Report Design: Architecture, Not Marketing">
-    <meta name="twitter:site" content="@TechToolsInfoVerse">
+<meta name="twitter:site" content="@TechToolsInfoVerse">
             <!-- /openclaw social meta tags -->
     <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Your Annual Report Design Isn&rsquo;t Marketing. It&rsquo;s Architecture. Comments Feed" href="https://techtools.info-verse.org/2026/07/29/annual-report-design-architecture/feed/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Q: How long should an architectural annual report be?","acceptedAnswer":{"@type":"Answer","text":"A: There is no fixed length. A small consulting firm's report might be 20. The rule is simple: include everything that supports the narrative, cut everything that does not. If a page does not advance the story, remove it. If a page strengthens the story, keep it."}},{"@type":"Question","name":"Q: Should I design a physical report or a digital PDF?","acceptedAnswer":{"@type":"Answer","text":"A: If your audience is investors, partners, or employees who will keep the report on their desk, design a physical book. If your audience is customers, prospects, or the general public, design a digital PDF. Do not design a physical book for an audience that will never hold it. Do not design a digital PDF for an audience that values permanence."}},{"@type":"Question","name":"Q: Can I use AI to design my annual report?","acceptedAnswer":{"@type":"Answer","text":"A: AI can generate layouts, charts, and images. It cannot generate narrative, hierarchy, or intent. Use AI for the mechanical work. Use your own judgment for the structural decisions. If you hand over the entire design to an AI, you will get a brochure, not a report."}},{"@type":"Question","name":"Q: How often should I publish an annual report?","acceptedAnswer":{"@type":"Answer","text":"A: Annually. If you need to communicate more frequently, publish quarterly briefings or monthly newsletters. An annual report is a structural document. It is not a news feed. Publishing it more often dilutes its weight and its meaning."}},{"@type":"Question","name":"Q: What is the most common mistake in annual report design?","acceptedAnswer":{"@type":"Answer","text":"A: Treating it as marketing. Focusing on selling instead of showing. Focusing on volume instead of hierarchy. Focusing on speed instead of substance. If your report feels light, it probably is."}}]}</script>
@@ -308,10 +306,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
         <section class="openclaw-crosslink">
 <h2 class="openclaw-crosslink-heading">From other Info Verse sites</h2>
 <ul class="openclaw-crosslink-list">
-<li><a href="https://gardening.info-verse.org/2026/08/15/lemon-balm-spreading-taproot/" rel="noopener">Lemon Balm Spreading: The Taproot That Turns It Into a Lawn</a></li>
-<li><a href="https://dogs.info-verse.org/2026/08/15/dog-breeds-list-filter-lifestyle/" rel="noopener">A Dog Breeds List Is Not a Catalog. It&rsquo;s a Filter.</a></li>
-<li><a href="https://boardgames.info-verse.org/2026/08/15/dixit-art-is-mechanic/" rel="noopener">Dixit: The Voting Math That Rewards Ambiguity</a></li>
-<li><a href="https://coffee.info-verse.org/2026/08/15/best-pour-over-coffee-dripper-ceramic-beats-plastic/" rel="noopener">Why Your Plastic Dripper Steals Heat: The Thermal Mass Problem in Pour Over</a></li>
+<li><a href="https://gardening.info-verse.org/2026/08/15/fiddle-leaf-fig-brown-spots-sunburn-fungal-diagnostic/" rel="noopener">Fiddle Leaf Fig Brown Spots: The Geometry of the Damage</a></li>
+<li><a href="https://dogs.info-verse.org/2026/08/15/brachycephalic-obstructive-airway-syndrome/" rel="noopener">Brachycephalic Obstructive Airway Syndrome: The 4 Components of the Squeeze</a></li>
+<li><a href="https://boardgames.info-verse.org/2026/08/15/machikoro-kingdomino-deck-building-gateway/" rel="noopener">Machi Koro vs. Kingdomino: Why Deck-Building Beats Tile-Drafting for Strategy</a></li>
+<li><a href="https://coffee.info-verse.org/2026/08/15/how-to-grind-for-pour-over-particle-distribution/" rel="noopener">How to Grind for Pour Over: The Particle Distribution That Defines Clarity</a></li>
 </ul>
 </section>
 
@@ -449,7 +447,40 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
 </footer>
 </div>
-<script id="wp-block-template-skip-link-js-after">
+<script>
+(function () {
+    if (typeof gtag !== 'function') { return; }
+
+    document.addEventListener('submit', function (e) {
+        if (e.target.closest && e.target.closest('.openclaw-newsletter-form')) {
+            gtag('event', 'newsletter_submit');
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        var shareLink = e.target.closest('.openclaw-share-bar a[aria-label]');
+        if (shareLink) {
+            gtag('event', 'share_click', {
+                platform: shareLink.getAttribute('aria-label').replace(/^Share on /, '')
+            });
+            return;
+        }
+        var copyBtn = e.target.closest('.openclaw-share-bar button[aria-label]');
+        if (copyBtn) {
+            gtag('event', 'share_click', { platform: copyBtn.getAttribute('aria-label') });
+            return;
+        }
+        if (e.target.closest('.openclaw-crosslink-list a')) {
+            gtag('event', 'crosslink_click');
+            return;
+        }
+        if (e.target.closest('.openclaw-related-card')) {
+            gtag('event', 'related_post_click');
+        }
+    });
+})();
+</script>
+    <script id="wp-block-template-skip-link-js-after">
 	( function() {
 		var skipLinkTarget = document.querySelector( 'main' ),
 			sibling,

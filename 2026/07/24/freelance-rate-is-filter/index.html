@@ -19,7 +19,7 @@ gtag('config', 'G-EMJRNCZR10');
 	<link rel="canonical" href="https://techtools.info-verse.org/2026/07/24/freelance-rate-is-filter/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Freelance Rate Is a Filter: How to Set It">
+	<meta property="og:title" content="Your Freelance Rate Isn&rsquo;t a Number. It&rsquo;s a Filter.">
 	<meta property="og:description" content="Your freelance rate is not a price. It is a filter that sorts clients by how they will treat you, and the math behind that filter is more important than the number you type into a contract.">
 	<meta property="og:url" content="https://techtools.info-verse.org/2026/07/24/freelance-rate-is-filter/">
 	<meta property="og:site_name" content="Tech Tools Info Verse">
@@ -42,9 +42,7 @@ gtag('config', 'G-EMJRNCZR10');
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Feed" href="https://techtools.info-verse.org/feed/">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Comments Feed" href="https://techtools.info-verse.org/comments/feed/">
-<meta property="og:url" content="https://techtools.info-verse.org/">
-<meta property="og:title" content="Freelance Rate Is a Filter: How to Set It">
-    <meta name="twitter:site" content="@TechToolsInfoVerse">
+<meta name="twitter:site" content="@TechToolsInfoVerse">
             <!-- /openclaw social meta tags -->
     <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Your Freelance Rate Isn&rsquo;t a Number. It&rsquo;s a Filter. Comments Feed" href="https://techtools.info-verse.org/2026/07/24/freelance-rate-is-filter/feed/">
 <script>
@@ -303,10 +301,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
         <section class="openclaw-crosslink">
 <h2 class="openclaw-crosslink-heading">From other Info Verse sites</h2>
 <ul class="openclaw-crosslink-list">
-<li><a href="https://gardening.info-verse.org/2026/08/15/lemon-balm-spreading-taproot/" rel="noopener">Lemon Balm Spreading: The Taproot That Turns It Into a Lawn</a></li>
-<li><a href="https://dogs.info-verse.org/2026/08/15/dog-breeds-list-filter-lifestyle/" rel="noopener">A Dog Breeds List Is Not a Catalog. It&rsquo;s a Filter.</a></li>
-<li><a href="https://boardgames.info-verse.org/2026/08/15/dixit-art-is-mechanic/" rel="noopener">Dixit: The Voting Math That Rewards Ambiguity</a></li>
-<li><a href="https://coffee.info-verse.org/2026/08/15/best-pour-over-coffee-dripper-ceramic-beats-plastic/" rel="noopener">Why Your Plastic Dripper Steals Heat: The Thermal Mass Problem in Pour Over</a></li>
+<li><a href="https://gardening.info-verse.org/2026/08/15/fiddle-leaf-fig-brown-spots-sunburn-fungal-diagnostic/" rel="noopener">Fiddle Leaf Fig Brown Spots: The Geometry of the Damage</a></li>
+<li><a href="https://dogs.info-verse.org/2026/08/15/brachycephalic-obstructive-airway-syndrome/" rel="noopener">Brachycephalic Obstructive Airway Syndrome: The 4 Components of the Squeeze</a></li>
+<li><a href="https://boardgames.info-verse.org/2026/08/15/machikoro-kingdomino-deck-building-gateway/" rel="noopener">Machi Koro vs. Kingdomino: Why Deck-Building Beats Tile-Drafting for Strategy</a></li>
+<li><a href="https://coffee.info-verse.org/2026/08/15/how-to-grind-for-pour-over-particle-distribution/" rel="noopener">How to Grind for Pour Over: The Particle Distribution That Defines Clarity</a></li>
 </ul>
 </section>
 
@@ -444,7 +442,40 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
 </footer>
 </div>
-<script id="wp-block-template-skip-link-js-after">
+<script>
+(function () {
+    if (typeof gtag !== 'function') { return; }
+
+    document.addEventListener('submit', function (e) {
+        if (e.target.closest && e.target.closest('.openclaw-newsletter-form')) {
+            gtag('event', 'newsletter_submit');
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        var shareLink = e.target.closest('.openclaw-share-bar a[aria-label]');
+        if (shareLink) {
+            gtag('event', 'share_click', {
+                platform: shareLink.getAttribute('aria-label').replace(/^Share on /, '')
+            });
+            return;
+        }
+        var copyBtn = e.target.closest('.openclaw-share-bar button[aria-label]');
+        if (copyBtn) {
+            gtag('event', 'share_click', { platform: copyBtn.getAttribute('aria-label') });
+            return;
+        }
+        if (e.target.closest('.openclaw-crosslink-list a')) {
+            gtag('event', 'crosslink_click');
+            return;
+        }
+        if (e.target.closest('.openclaw-related-card')) {
+            gtag('event', 'related_post_click');
+        }
+    });
+})();
+</script>
+    <script id="wp-block-template-skip-link-js-after">
 	( function() {
 		var skipLinkTarget = document.querySelector( 'main' ),
 			sibling,

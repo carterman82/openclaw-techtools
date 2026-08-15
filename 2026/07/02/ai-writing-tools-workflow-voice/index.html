@@ -19,7 +19,7 @@ gtag('config', 'G-EMJRNCZR10');
 	<link rel="canonical" href="https://techtools.info-verse.org/2026/07/02/ai-writing-tools-workflow-voice/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="AI Writing Tools Sound Like AI Because You&rsquo;re Using Them">
+	<meta property="og:title" content="AI Writing Tools Sound Like AI Because You&rsquo;re Using Them Backward">
 	<meta property="og:description" content="AI writing tools produce generic, robotic output when you draft with them first. The fix is counterintuitive: use AI to edit, not to write, and your voice">
 	<meta property="og:url" content="https://techtools.info-verse.org/2026/07/02/ai-writing-tools-workflow-voice/">
 	<meta property="og:site_name" content="Tech Tools Info Verse">
@@ -43,9 +43,7 @@ gtag('config', 'G-EMJRNCZR10');
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Feed" href="https://techtools.info-verse.org/feed/">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Comments Feed" href="https://techtools.info-verse.org/comments/feed/">
-<meta property="og:url" content="https://techtools.info-verse.org/">
-<meta property="og:title" content="AI Writing Tools Sound Like AI Because You&rsquo;re Using Them">
-    <meta name="twitter:site" content="@TechToolsInfoVerse">
+<meta name="twitter:site" content="@TechToolsInfoVerse">
             <!-- /openclaw social meta tags -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this approach work for short-form content too?","acceptedAnswer":{"@type":"Answer","text":"For anything under 200 words, the gain is smaller but the risk is also smaller. Write a rough version, paste it in, ask for a tighter version, compare the two. The main thing to watch is whether the AI removed a specific detail you needed to keep."}},{"@type":"Question","name":"What if I'm not a confident writer?","acceptedAnswer":{"@type":"Answer","text":"The rough draft doesn't need to be good writing. It needs to be your thinking. Bullet points, fragments, and half-sentences all work as raw material for Stage 2 diagnosis. The point is to have your ideas in the document before the AI touches it, not to have polished prose."}},{"@type":"Question","name":"Which AI writing tools support this workflow best?","acceptedAnswer":{"@type":"Answer","text":"Claude handles editing constraints well because it follows nuanced instructions reliably. ChatGPT with a good system prompt works too. Purpose-built tools like Jasper are fine for Stage 4 tasks (headlines, meta descriptions, variants) but can over-generate when given full drafts."}},{"@type":"Question","name":"How do I know if an AI edit has overwritten my voice?","acceptedAnswer":{"@type":"Answer","text":"Read the suggested change aloud. If you wouldn't say it that way in a conversation with a colleague, put your version back. The spoken-word test catches register shifts that look fine on screen but feel wrong in context."}}]}</script>
 <script>
@@ -325,10 +323,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
         <section class="openclaw-crosslink">
 <h2 class="openclaw-crosslink-heading">From other Info Verse sites</h2>
 <ul class="openclaw-crosslink-list">
-<li><a href="https://gardening.info-verse.org/2026/08/15/lemon-balm-spreading-taproot/" rel="noopener">Lemon Balm Spreading: The Taproot That Turns It Into a Lawn</a></li>
-<li><a href="https://dogs.info-verse.org/2026/08/15/dog-breeds-list-filter-lifestyle/" rel="noopener">A Dog Breeds List Is Not a Catalog. It&rsquo;s a Filter.</a></li>
-<li><a href="https://boardgames.info-verse.org/2026/08/15/dixit-art-is-mechanic/" rel="noopener">Dixit: The Voting Math That Rewards Ambiguity</a></li>
-<li><a href="https://coffee.info-verse.org/2026/08/15/best-pour-over-coffee-dripper-ceramic-beats-plastic/" rel="noopener">Why Your Plastic Dripper Steals Heat: The Thermal Mass Problem in Pour Over</a></li>
+<li><a href="https://gardening.info-verse.org/2026/08/15/fiddle-leaf-fig-brown-spots-sunburn-fungal-diagnostic/" rel="noopener">Fiddle Leaf Fig Brown Spots: The Geometry of the Damage</a></li>
+<li><a href="https://dogs.info-verse.org/2026/08/15/brachycephalic-obstructive-airway-syndrome/" rel="noopener">Brachycephalic Obstructive Airway Syndrome: The 4 Components of the Squeeze</a></li>
+<li><a href="https://boardgames.info-verse.org/2026/08/15/machikoro-kingdomino-deck-building-gateway/" rel="noopener">Machi Koro vs. Kingdomino: Why Deck-Building Beats Tile-Drafting for Strategy</a></li>
+<li><a href="https://coffee.info-verse.org/2026/08/15/how-to-grind-for-pour-over-particle-distribution/" rel="noopener">How to Grind for Pour Over: The Particle Distribution That Defines Clarity</a></li>
 </ul>
 </section>
 
@@ -466,7 +464,40 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
 </footer>
 </div>
-<script id="wp-block-template-skip-link-js-after">
+<script>
+(function () {
+    if (typeof gtag !== 'function') { return; }
+
+    document.addEventListener('submit', function (e) {
+        if (e.target.closest && e.target.closest('.openclaw-newsletter-form')) {
+            gtag('event', 'newsletter_submit');
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        var shareLink = e.target.closest('.openclaw-share-bar a[aria-label]');
+        if (shareLink) {
+            gtag('event', 'share_click', {
+                platform: shareLink.getAttribute('aria-label').replace(/^Share on /, '')
+            });
+            return;
+        }
+        var copyBtn = e.target.closest('.openclaw-share-bar button[aria-label]');
+        if (copyBtn) {
+            gtag('event', 'share_click', { platform: copyBtn.getAttribute('aria-label') });
+            return;
+        }
+        if (e.target.closest('.openclaw-crosslink-list a')) {
+            gtag('event', 'crosslink_click');
+            return;
+        }
+        if (e.target.closest('.openclaw-related-card')) {
+            gtag('event', 'related_post_click');
+        }
+    });
+})();
+</script>
+    <script id="wp-block-template-skip-link-js-after">
 	( function() {
 		var skipLinkTarget = document.querySelector( 'main' ),
 			sibling,

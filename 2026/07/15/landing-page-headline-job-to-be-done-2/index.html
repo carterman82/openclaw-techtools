@@ -43,9 +43,7 @@ gtag('config', 'G-EMJRNCZR10');
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Feed" href="https://techtools.info-verse.org/feed/">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Comments Feed" href="https://techtools.info-verse.org/comments/feed/">
-<meta property="og:url" content="https://techtools.info-verse.org/">
-<meta property="og:title" content="Your Landing Page Headline Is Doing the Wrong Job">
-    <meta name="twitter:site" content="@TechToolsInfoVerse">
+<meta name="twitter:site" content="@TechToolsInfoVerse">
             <!-- /openclaw social meta tags -->
     <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Your Landing Page Headline Is Doing the Wrong Job Comments Feed" href="https://techtools.info-verse.org/2026/07/15/landing-page-headline-job-to-be-done-2/feed/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Q: Can I use a feature statement on a landing page at all?","acceptedAnswer":{"@type":"Answer","text":"A: Only if the visitor has already decided to buy and is looking for confirmation. On a cold or warm landing page, a feature statement is a waste of the most valuable real estate you have."}},{"@type":"Question","name":"Q: How do I know which zone my headline should be in?","acceptedAnswer":{"@type":"Answer","text":"A: Match the zone to the audience's stage. Cold traffic = Pain Promise. Warm traffic = Outcome Promise. Evaluating solutions = Mechanism Promise. Post-purchase confirmation = Feature Statement."}},{"@type":"Question","name":"Q: What if my product doesn't have a clear outcome?","acceptedAnswer":{"@type":"Answer","text":"A: Then your product is probably a feature, not a solution. Talk to your customers. Find the outcome they're actually buying. If you can't find one, you don't have a product. You have a feature looking for a problem."}},{"@type":"Question","name":"Q: How long should a landing page headline be?","acceptedAnswer":{"@type":"Answer","text":"A: As short as it can be while still being specific. Six to twelve words is the sweet spot. If it's longer, you're probably trying to say too much. If it's shorter, you're probably being too vague."}},{"@type":"Question","name":"Q: Can I A/B test headline zones?","acceptedAnswer":{"@type":"Answer","text":"A: Yes. Test a Pain Promise against an Outcome Promise. Test a Mechanism Promise against a Feature Statement. The winner will tell you where your audience actually is in their journey. Don't guess. Test."}}]}</script>
@@ -306,10 +304,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
         <section class="openclaw-crosslink">
 <h2 class="openclaw-crosslink-heading">From other Info Verse sites</h2>
 <ul class="openclaw-crosslink-list">
-<li><a href="https://gardening.info-verse.org/2026/08/15/lemon-balm-spreading-taproot/" rel="noopener">Lemon Balm Spreading: The Taproot That Turns It Into a Lawn</a></li>
-<li><a href="https://dogs.info-verse.org/2026/08/15/dog-breeds-list-filter-lifestyle/" rel="noopener">A Dog Breeds List Is Not a Catalog. It&rsquo;s a Filter.</a></li>
-<li><a href="https://boardgames.info-verse.org/2026/08/15/dixit-art-is-mechanic/" rel="noopener">Dixit: The Voting Math That Rewards Ambiguity</a></li>
-<li><a href="https://coffee.info-verse.org/2026/08/15/best-pour-over-coffee-dripper-ceramic-beats-plastic/" rel="noopener">Why Your Plastic Dripper Steals Heat: The Thermal Mass Problem in Pour Over</a></li>
+<li><a href="https://gardening.info-verse.org/2026/08/15/fiddle-leaf-fig-brown-spots-sunburn-fungal-diagnostic/" rel="noopener">Fiddle Leaf Fig Brown Spots: The Geometry of the Damage</a></li>
+<li><a href="https://dogs.info-verse.org/2026/08/15/brachycephalic-obstructive-airway-syndrome/" rel="noopener">Brachycephalic Obstructive Airway Syndrome: The 4 Components of the Squeeze</a></li>
+<li><a href="https://boardgames.info-verse.org/2026/08/15/machikoro-kingdomino-deck-building-gateway/" rel="noopener">Machi Koro vs. Kingdomino: Why Deck-Building Beats Tile-Drafting for Strategy</a></li>
+<li><a href="https://coffee.info-verse.org/2026/08/15/how-to-grind-for-pour-over-particle-distribution/" rel="noopener">How to Grind for Pour Over: The Particle Distribution That Defines Clarity</a></li>
 </ul>
 </section>
 
@@ -447,7 +445,40 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
 </footer>
 </div>
-<script id="wp-block-template-skip-link-js-after">
+<script>
+(function () {
+    if (typeof gtag !== 'function') { return; }
+
+    document.addEventListener('submit', function (e) {
+        if (e.target.closest && e.target.closest('.openclaw-newsletter-form')) {
+            gtag('event', 'newsletter_submit');
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        var shareLink = e.target.closest('.openclaw-share-bar a[aria-label]');
+        if (shareLink) {
+            gtag('event', 'share_click', {
+                platform: shareLink.getAttribute('aria-label').replace(/^Share on /, '')
+            });
+            return;
+        }
+        var copyBtn = e.target.closest('.openclaw-share-bar button[aria-label]');
+        if (copyBtn) {
+            gtag('event', 'share_click', { platform: copyBtn.getAttribute('aria-label') });
+            return;
+        }
+        if (e.target.closest('.openclaw-crosslink-list a')) {
+            gtag('event', 'crosslink_click');
+            return;
+        }
+        if (e.target.closest('.openclaw-related-card')) {
+            gtag('event', 'related_post_click');
+        }
+    });
+})();
+</script>
+    <script id="wp-block-template-skip-link-js-after">
 	( function() {
 		var skipLinkTarget = document.querySelector( 'main' ),
 			sibling,

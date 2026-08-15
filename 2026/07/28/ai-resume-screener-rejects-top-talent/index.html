@@ -19,7 +19,7 @@ gtag('config', 'G-EMJRNCZR10');
 	<link rel="canonical" href="https://techtools.info-verse.org/2026/07/28/ai-resume-screener-rejects-top-talent/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="AI resume screener: Rejecting Top Talent">
+	<meta property="og:title" content="AI Resume Screeners Filter Out Top Talent. The 2023 NBER Study Proves It.">
 	<meta property="og:description" content="An AI resume screener rejects top talent by design. The 2023 NBER study proves it. Here is how to use automation without filtering out your best candidates.">
 	<meta property="og:url" content="https://techtools.info-verse.org/2026/07/28/ai-resume-screener-rejects-top-talent/">
 	<meta property="og:site_name" content="Tech Tools Info Verse">
@@ -42,9 +42,7 @@ gtag('config', 'G-EMJRNCZR10');
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Feed" href="https://techtools.info-verse.org/feed/">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Comments Feed" href="https://techtools.info-verse.org/comments/feed/">
-<meta property="og:url" content="https://techtools.info-verse.org/">
-<meta property="og:title" content="AI resume screener: Rejecting Top Talent">
-    <meta name="twitter:site" content="@TechToolsInfoVerse">
+<meta name="twitter:site" content="@TechToolsInfoVerse">
             <!-- /openclaw social meta tags -->
     <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; AI Resume Screeners Filter Out Top Talent. The 2023 NBER Study Proves It. Comments Feed" href="https://techtools.info-verse.org/2026/07/28/ai-resume-screener-rejects-top-talent/feed/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does an AI resume screener actually read my resume?","acceptedAnswer":{"@type":"Answer","text":"No. It scans for keywords and patterns. It does not read your resume the way a human does. It does not understand context. It does not understand nuance. It does not understand your story. It only understands keywords."}},{"@type":"Question","name":"Can I train an AI resume screener to ignore bias?","acceptedAnswer":{"@type":"Answer","text":"You can try. But you cannot eliminate bias. You can only reduce it. Bias is baked into the data. Bias is baked into the algorithm. Bias is baked into the world. You cannot eliminate it. You can only manage it."}},{"@type":"Question","name":"Should I stop using an AI resume screener?","acceptedAnswer":{"@type":"Answer","text":"No. You should start using it correctly. Stop treating it as a filter. Start treating it as a sorting tool. Let it rank your candidates. Do not let it reject them. Make the final decision yourself."}},{"@type":"Question","name":"What is the best AI resume screener for small teams?","acceptedAnswer":{"@type":"Answer","text":"There is no single best tool. There are only tools that fit your needs. If you are a small team, you need a tool that is easy to use, easy to configure, and easy to integrate with your existing workflow. Look for tools that offer a free tier, offer a trial, and offer a money-back guarantee."}}]}</script>
@@ -324,10 +322,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
         <section class="openclaw-crosslink">
 <h2 class="openclaw-crosslink-heading">From other Info Verse sites</h2>
 <ul class="openclaw-crosslink-list">
-<li><a href="https://gardening.info-verse.org/2026/08/15/lemon-balm-spreading-taproot/" rel="noopener">Lemon Balm Spreading: The Taproot That Turns It Into a Lawn</a></li>
-<li><a href="https://dogs.info-verse.org/2026/08/15/dog-breeds-list-filter-lifestyle/" rel="noopener">A Dog Breeds List Is Not a Catalog. It&rsquo;s a Filter.</a></li>
-<li><a href="https://boardgames.info-verse.org/2026/08/15/dixit-art-is-mechanic/" rel="noopener">Dixit: The Voting Math That Rewards Ambiguity</a></li>
-<li><a href="https://coffee.info-verse.org/2026/08/15/best-pour-over-coffee-dripper-ceramic-beats-plastic/" rel="noopener">Why Your Plastic Dripper Steals Heat: The Thermal Mass Problem in Pour Over</a></li>
+<li><a href="https://gardening.info-verse.org/2026/08/15/fiddle-leaf-fig-brown-spots-sunburn-fungal-diagnostic/" rel="noopener">Fiddle Leaf Fig Brown Spots: The Geometry of the Damage</a></li>
+<li><a href="https://dogs.info-verse.org/2026/08/15/brachycephalic-obstructive-airway-syndrome/" rel="noopener">Brachycephalic Obstructive Airway Syndrome: The 4 Components of the Squeeze</a></li>
+<li><a href="https://boardgames.info-verse.org/2026/08/15/machikoro-kingdomino-deck-building-gateway/" rel="noopener">Machi Koro vs. Kingdomino: Why Deck-Building Beats Tile-Drafting for Strategy</a></li>
+<li><a href="https://coffee.info-verse.org/2026/08/15/how-to-grind-for-pour-over-particle-distribution/" rel="noopener">How to Grind for Pour Over: The Particle Distribution That Defines Clarity</a></li>
 </ul>
 </section>
 
@@ -465,7 +463,40 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
 </footer>
 </div>
-<script id="wp-block-template-skip-link-js-after">
+<script>
+(function () {
+    if (typeof gtag !== 'function') { return; }
+
+    document.addEventListener('submit', function (e) {
+        if (e.target.closest && e.target.closest('.openclaw-newsletter-form')) {
+            gtag('event', 'newsletter_submit');
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        var shareLink = e.target.closest('.openclaw-share-bar a[aria-label]');
+        if (shareLink) {
+            gtag('event', 'share_click', {
+                platform: shareLink.getAttribute('aria-label').replace(/^Share on /, '')
+            });
+            return;
+        }
+        var copyBtn = e.target.closest('.openclaw-share-bar button[aria-label]');
+        if (copyBtn) {
+            gtag('event', 'share_click', { platform: copyBtn.getAttribute('aria-label') });
+            return;
+        }
+        if (e.target.closest('.openclaw-crosslink-list a')) {
+            gtag('event', 'crosslink_click');
+            return;
+        }
+        if (e.target.closest('.openclaw-related-card')) {
+            gtag('event', 'related_post_click');
+        }
+    });
+})();
+</script>
+    <script id="wp-block-template-skip-link-js-after">
 	( function() {
 		var skipLinkTarget = document.querySelector( 'main' ),
 			sibling,

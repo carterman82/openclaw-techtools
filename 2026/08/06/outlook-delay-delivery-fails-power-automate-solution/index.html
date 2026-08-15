@@ -19,7 +19,7 @@ gtag('config', 'G-EMJRNCZR10');
 	<link rel="canonical" href="https://techtools.info-verse.org/2026/08/06/outlook-delay-delivery-fails-power-automate-solution/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Automate Email Sending Outlook: Server-Side Fix">
+	<meta property="og:title" content="Outlook Sends Scheduled Emails Hours Late. One Rule Decides When.">
 	<meta property="og:description" content="Stop relying on Outlook's broken Delay Delivery. Learn how to automate email sending outlook using Power Automate for reliable, server-side scheduling that works 24/7.">
 	<meta property="og:url" content="https://techtools.info-verse.org/2026/08/06/outlook-delay-delivery-fails-power-automate-solution/">
 	<meta property="og:site_name" content="Tech Tools Info Verse">
@@ -43,9 +43,7 @@ gtag('config', 'G-EMJRNCZR10');
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Feed" href="https://techtools.info-verse.org/feed/">
 <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Comments Feed" href="https://techtools.info-verse.org/comments/feed/">
-<meta property="og:url" content="https://techtools.info-verse.org/">
-<meta property="og:title" content="Automate Email Sending Outlook: Server-Side Fix">
-    <meta name="twitter:site" content="@TechToolsInfoVerse">
+<meta name="twitter:site" content="@TechToolsInfoVerse">
             <!-- /openclaw social meta tags -->
     <link rel="alternate" type="application/rss+xml" title="Tech Tools Info Verse &raquo; Outlook Sends Scheduled Emails Hours Late. One Rule Decides When. Comments Feed" href="https://techtools.info-verse.org/2026/08/06/outlook-delay-delivery-fails-power-automate-solution/feed/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Outlook Sends Scheduled Emails Hours Late. One Rule Decides When.","step":[{"@type":"HowToStep","position":1,"name":"Create a new flow.","text":"Go to flow.microsoft.com and click \"Create\" > \"Scheduled flow\"."},{"@type":"HowToStep","position":2,"name":"Set the recurrence.","text":"Choose your frequency (daily, weekly, monthly) and the exact time you want the email to send. This time is in UTC, so adjust for your timezone. This is your server-side timestamp. It will fire exactly when scheduled, every time, as long as the flow is enabled."},{"@type":"HowToStep","position":3,"name":"Add the Send an email (V2) action.","text":"Search for \"Send an email (V2)\" in the actions list. This is the modern, robust version of the email action. It supports HTML, attachments, and complex recipients."},{"@type":"HowToStep","position":4,"name":"Configure the email content.","text":"Fill in the To, Subject, and Body fields. You can use dynamic content from your trigger (like the current date) or hard-code static text. If you are sending to a list, use a Compose action to generate the recipient list from a SharePoint list or an Excel file."},{"@type":"HowToStep","position":5,"name":"Test and enable.","text":"Save the flow and run it manually to test. Check your sent folder. Once confirmed, toggle the flow to \"On\". It will now run automatically at the scheduled time, server-side."}]}</script>
@@ -308,10 +306,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
         <section class="openclaw-crosslink">
 <h2 class="openclaw-crosslink-heading">From other Info Verse sites</h2>
 <ul class="openclaw-crosslink-list">
-<li><a href="https://gardening.info-verse.org/2026/08/15/lemon-balm-spreading-taproot/" rel="noopener">Lemon Balm Spreading: The Taproot That Turns It Into a Lawn</a></li>
-<li><a href="https://dogs.info-verse.org/2026/08/15/dog-breeds-list-filter-lifestyle/" rel="noopener">A Dog Breeds List Is Not a Catalog. It&rsquo;s a Filter.</a></li>
-<li><a href="https://boardgames.info-verse.org/2026/08/15/dixit-art-is-mechanic/" rel="noopener">Dixit: The Voting Math That Rewards Ambiguity</a></li>
-<li><a href="https://coffee.info-verse.org/2026/08/15/best-pour-over-coffee-dripper-ceramic-beats-plastic/" rel="noopener">Why Your Plastic Dripper Steals Heat: The Thermal Mass Problem in Pour Over</a></li>
+<li><a href="https://gardening.info-verse.org/2026/08/15/fiddle-leaf-fig-brown-spots-sunburn-fungal-diagnostic/" rel="noopener">Fiddle Leaf Fig Brown Spots: The Geometry of the Damage</a></li>
+<li><a href="https://dogs.info-verse.org/2026/08/15/brachycephalic-obstructive-airway-syndrome/" rel="noopener">Brachycephalic Obstructive Airway Syndrome: The 4 Components of the Squeeze</a></li>
+<li><a href="https://boardgames.info-verse.org/2026/08/15/machikoro-kingdomino-deck-building-gateway/" rel="noopener">Machi Koro vs. Kingdomino: Why Deck-Building Beats Tile-Drafting for Strategy</a></li>
+<li><a href="https://coffee.info-verse.org/2026/08/15/how-to-grind-for-pour-over-particle-distribution/" rel="noopener">How to Grind for Pour Over: The Particle Distribution That Defines Clarity</a></li>
 </ul>
 </section>
 
@@ -449,7 +447,40 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 
 </footer>
 </div>
-<script id="wp-block-template-skip-link-js-after">
+<script>
+(function () {
+    if (typeof gtag !== 'function') { return; }
+
+    document.addEventListener('submit', function (e) {
+        if (e.target.closest && e.target.closest('.openclaw-newsletter-form')) {
+            gtag('event', 'newsletter_submit');
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        var shareLink = e.target.closest('.openclaw-share-bar a[aria-label]');
+        if (shareLink) {
+            gtag('event', 'share_click', {
+                platform: shareLink.getAttribute('aria-label').replace(/^Share on /, '')
+            });
+            return;
+        }
+        var copyBtn = e.target.closest('.openclaw-share-bar button[aria-label]');
+        if (copyBtn) {
+            gtag('event', 'share_click', { platform: copyBtn.getAttribute('aria-label') });
+            return;
+        }
+        if (e.target.closest('.openclaw-crosslink-list a')) {
+            gtag('event', 'crosslink_click');
+            return;
+        }
+        if (e.target.closest('.openclaw-related-card')) {
+            gtag('event', 'related_post_click');
+        }
+    });
+})();
+</script>
+    <script id="wp-block-template-skip-link-js-after">
 	( function() {
 		var skipLinkTarget = document.querySelector( 'main' ),
 			sibling,
