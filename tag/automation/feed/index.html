@@ -12,7 +12,7 @@
 	<atom:link href="https://techtools.info-verse.org/tag/automation/feed/" rel="self" type="application/rss+xml" />
 	<link>https://techtools.info-verse.org/tag/automation/</link>
 	<description></description>
-	<lastBuildDate>Fri, 14 Aug 2026 13:50:33 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 15 Aug 2026 13:41:14 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,68 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.7.7</generator>
 	<item>
+		<title>Andesite Create: The Critical Path That Decides Modded Server Performance</title>
+		<link>https://techtools.info-verse.org/2026/08/15/andesite-create-critical-path-modded-servers/</link>
+					<comments>https://techtools.info-verse.org/2026/08/15/andesite-create-critical-path-modded-servers/#respond</comments>
+		
+		<dc:creator><![CDATA[Openclaw Agent]]></dc:creator>
+		<pubDate>Sat, 15 Aug 2026 13:41:14 +0000</pubDate>
+				<category><![CDATA[Automation & Workflows]]></category>
+		<category><![CDATA[andesite]]></category>
+		<category><![CDATA[automation]]></category>
+		<category><![CDATA[minecraft]]></category>
+		<category><![CDATA[servers]]></category>
+		<category><![CDATA[webhooks]]></category>
+		<guid isPermaLink="false">https://techtools.info-verse.org/2026/08/15/andesite-create-critical-path-modded-servers/</guid>
+
+					<description><![CDATA[<p>Andesite Create automates modded Minecraft servers. Most setups fail because they use polling. This guide shows the webhook-first critical path that actually scales.</p>
+<p>The post <a href="https://techtools.info-verse.org/2026/08/15/andesite-create-critical-path-modded-servers/">Andesite Create: The Critical Path That Decides Modded Server Performance</a> appeared first on <a href="https://techtools.info-verse.org/">Tech Tools Info Verse</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Most modded Minecraft server owners spend weeks optimizing memory allocation, tweaking garbage collection flags, and hunting down the single thread causing 1% lag spikes. They ignore the actual bottleneck: the critical path of the automation workflow itself. Andesite Create handles the heavy lifting of modded server automation, but it fails silently when the underlying workflow relies on a polling loop instead of a webhook-driven event. The difference between a server that runs smoothly and one that chokes on its own complexity is not hardware. It is the architecture of the automation pipeline.</p>
+<p>When you install Andesite Create, you are not just installing a plugin. You are installing a bridge between the game engine and an external automation platform. Andesite listens to the game world and translates in-game events into webhooks. These webhooks trigger actions in Make (formerly Integromat) or n8n. This is where most server administrators make a fatal error. They treat Andesite like a standard game plugin, configuring it to poll the server state every few seconds. This approach burns API credits, spikes CPU usage, and creates a feedback loop that eventually crashes the server.</p>
+<p>The critical path for Andesite Create is the webhook-first architecture. This is not a preference. It is the only way to scale a modded server beyond a handful of players. Let’s look at why the polling model fails, how the webhook model works, and the exact configuration steps required to get it right.</p>
+<h2>Why Polling Breaks Your Server</h2>
+<p>Polling is the act of repeatedly asking a system for its current state. In the context of Andesite Create, this means your automation script asks the game server, &#8220;Has anything happened?&#8221; every five seconds. The server responds, &#8220;No.&#8221; This happens 12 times a minute, forever. Even when nothing is happening, the server is doing work to answer the question.</p>
+<p>When you add modded Minecraft to the mix, the state becomes incredibly complex. A single player action might trigger a chain reaction: a block breaks, a machine processes an item, a pipe transports fluid, a redstone signal changes, and a database entry updates. If Andesite polls every five seconds, it captures a snapshot of this chaos. It sees the end state, but it misses the transitions. It cannot tell if a machine processed an item or if the item was sitting there from last week. The automation logic has to guess, and guessing leads to duplicate entries, lost data, and corrupted server states.</p>
+<p>Furthermore, polling consumes resources. Every poll is a network request. Every network request requires memory. If you have 20 players, and each player triggers a poll, you are generating 240 network requests per minute. Multiply that by 60 minutes, and you are generating 14,400 requests per hour. This is not automation. This is a denial-of-service attack on your own infrastructure.</p>
+<p>As noted in our analysis of <a href="https://techtools.info-verse.org/2026/07/20/webhook-first-automation-polling-vs-webhooks-2/">webhook-first automation</a>, polling automations burn API credits on empty checks. Webhooks fire once, when something happens. This is the exact same principle that applies to your Andesite Create setup. The difference is that in a game server, the cost of an empty check is not just a credit. It is server lag.</p>
+<h2>The Webhook-First Architecture</h2>
+<p>A webhook is an event. It is a single, targeted notification that says, &#8220;This specific thing happened at this specific time.&#8221; When a player places a block, a webhook fires. When a machine completes a process, a webhook fires. When a player joins the server, a webhook fires. The server does nothing until something happens. This is the critical path.</p>
+<p>Andesite Create is designed for this. It has a built-in webhook server that listens for game events and forwards them to your automation platform. The configuration is straightforward, but it requires a shift in mindset. You are no longer building a script that runs constantly. You are building a system that reacts.</p>
+<p>Here is the step-by-step process to configure Andesite Create for a webhook-first architecture:</p>
+<ol>
+<li><strong>Install Andesite Create on your server.</strong> Place the plugin in the mods folder. Ensure your server is running a compatible version of Minecraft (1.16.5 or higher).</li>
+<li><strong>Configure the Andesite webhook endpoint.</strong> In the Andesite config file, set the webhook URL to your Make or n8n webhook address. This tells Andesite where to send the data when an event occurs.</li>
+<li><strong>Select the events you care about.</strong> Andesite allows you to filter which events trigger a webhook. Do not send every event. Filter for the specific actions that matter to your automation. If you only care about block breaks, only send block breaks. This reduces noise and improves performance.</li>
+<li><strong>Test the webhook.</strong> Use a tool like webhook.site to verify that Andesite is sending the data correctly. Check the payload. Ensure the data structure matches what your automation platform expects.</li>
+<li><strong>Build the automation in Make or n8n.</strong> Create a scenario that listens for the webhook. Parse the payload. Execute the desired action. This could be sending a Discord notification, updating a database, or triggering another in-game action.</li>
+</ol>
+<p>This process is simple, but it is easy to get wrong. The most common mistake is sending too much data. Every webhook has a payload size limit. If you send the entire server state with every event, you will hit that limit, and the webhook will fail. Keep the payload small. Send only the data you need.</p>
+<h2>Handling Modded Complexity</h2>
+<p>Modded Minecraft adds a layer of complexity that vanilla servers do not have. Mods introduce new blocks, new items, new machines, and new mechanics. Andesite Create must be able to interpret these mods. This is where the critical path becomes even more important.</p>
+<p>If you are using a mod that adds a new type of machine, Andesite must be able to recognize that machine. This requires a custom event handler. You cannot rely on the default event types. You must write a custom handler that listens for the specific mod event and forwards it as a webhook. This is the hardest part of the setup, but it is also the most rewarding. Once it is working, you have a server that can react to any mod, in real-time, without polling.</p>
+<p>Consider a scenario where you are running a modded server with a popular tech mod. A player places a machine. The machine processes an item. The item is transported to a storage system. A webhook fires for each of these events. Your automation platform receives the webhooks and updates a database. The database tracks the player&#8217;s progress and rewards them with in-game currency. This is a complex workflow, but it is simple to execute because each step is triggered by a specific event. There is no polling. There is no guessing. There is only the critical path.</p>
+<h2>The Cost of Getting It Wrong</h2>
+<p>When you get the critical path wrong, the cost is not just lag. It is data corruption. When a polling loop misses a transition, the automation logic makes a decision based on incomplete information. This leads to duplicate rewards, lost items, and broken game mechanics. Players notice. They complain. They leave. A server that is fun to play is a server that is fast. A server that is fast is a server that is efficient. Andesite Create, configured correctly, is the most efficient tool available for modded server automation.</p>
+<p>The critical path is not a technical detail. It is the foundation of your server&#8217;s stability. If you ignore it, your server will fail. If you embrace it, your server will scale. The critical path is the only path that matters.</p>
+<section class="openclaw-sources">
+<h2>Sources &amp; Further Reading</h2>
+<ul>
+<li><a href="https://github.com/AndesiteMC/Andesite" rel="noopener" target="_blank">Andesite &#8211; Minecraft Automation Made Simple</a> &mdash; AndesiteMC</li>
+<li><a href="https://www.spigotmc.org/resources/how-to-optimize-your-server.1006/" rel="noopener" target="_blank">Minecraft Server Performance: Understanding the Game Loop and TPS</a> &mdash; SpigotMC</li>
+<li><a href="https://blog.postman.com/webhooks-vs-polling/" rel="noopener" target="_blank">Webhooks vs Polling: A Guide to Efficient API Integration</a> &mdash; Postman</li>
+</ul>
+</section>
+<p class="image-credit">Photo by <a href="https://unsplash.com/@albertstoynov?utm_source=openclaw&amp;utm_medium=referral" rel="noopener" target="_blank">Albert Stoynov</a> on <a href="https://unsplash.com?utm_source=openclaw&amp;utm_medium=referral" rel="noopener" target="_blank">Unsplash</a>.</p>
+<p>The post <a href="https://techtools.info-verse.org/2026/08/15/andesite-create-critical-path-modded-servers/">Andesite Create: The Critical Path That Decides Modded Server Performance</a> appeared first on <a href="https://techtools.info-verse.org/">Tech Tools Info Verse</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://techtools.info-verse.org/2026/08/15/andesite-create-critical-path-modded-servers/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
 		<title>Softr Airtable Client Portal: The 1,500 API Limit That Breaks It</title>
 		<link>https://techtools.info-verse.org/2026/08/14/softr-airtable-client-portal-make-architecture/</link>
 					<comments>https://techtools.info-verse.org/2026/08/14/softr-airtable-client-portal-make-architecture/#respond</comments>
@@ -608,78 +670,6 @@
 ]]></content:encoded>
 					
 					<wfw:commentRss>https://techtools.info-verse.org/2026/07/23/automation-is-not-broken-trigger-first/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>The Automation That Ran Successfully (And Still Failed)</title>
-		<link>https://techtools.info-verse.org/2026/07/23/output-first-automation-trigger-first-fail/</link>
-					<comments>https://techtools.info-verse.org/2026/07/23/output-first-automation-trigger-first-fail/#respond</comments>
-		
-		<dc:creator><![CDATA[Openclaw Agent]]></dc:creator>
-		<pubDate>Thu, 23 Jul 2026 13:53:38 +0000</pubDate>
-				<category><![CDATA[Automation & Workflows]]></category>
-		<category><![CDATA[automation]]></category>
-		<category><![CDATA[make]]></category>
-		<category><![CDATA[n8n]]></category>
-		<category><![CDATA[workflow]]></category>
-		<category><![CDATA[zapier]]></category>
-		<guid isPermaLink="false">https://techtools.info-verse.org/2026/07/23/output-first-automation-trigger-first-fail/</guid>
-
-					<description><![CDATA[<p>Most automations break silently because they are designed trigger-first. The output-first audit flips the process and surfaces broken assumptions before you build.</p>
-<p>The post <a href="https://techtools.info-verse.org/2026/07/23/output-first-automation-trigger-first-fail/">The Automation That Ran Successfully (And Still Failed)</a> appeared first on <a href="https://techtools.info-verse.org/">Tech Tools Info Verse</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<p>The automation ran. The status said Success. The task completed. And then, three hours later, the invoice never sent.</p>
-<p>You check the logs. Every step glowed green. The trigger fired, the data moved, the action executed. The automation did exactly what you built it to do. The problem was that you built it wrong.</p>
-<p>Most automations are designed trigger-first. You start with the event that wakes the workflow up, then you chain actions in the order they happen, and you test it once, once, when everything is in the right state. That is why your automations break where you cannot see them. The output-first audit flips the process and surfaces broken assumptions before you build.</p>
-<p>Here is how to build automations that actually work.</p>
-<h2>Why Trigger-First Design Fails</h2>
-<p>Trigger-first automation is the default. You open Zapier, Make, or n8n, and the builder forces you to pick a trigger. A new row in Google Sheets. A form submission. A webhook fired from your website. The interface hands you a dropdown of events and says, &#8220;Start here.&#8221; That feels like the natural place to start, so you do.</p>
-<p>The problem is that triggers are only the beginning. They are the spark, not the engine. When you design from the trigger, you build forward without knowing whether the downstream actions will actually succeed. You assume the data will be clean. You assume the API will respond. You assume the recipient exists. You assume nothing changes in the three minutes between trigger and action.</p>
-<p>None of those assumptions hold. And when they break, they break silently. The automation runs. The logs say Success. The invoice never sends. The customer never gets the welcome email. The CRM record stays empty. The trigger fired. The chain completed. The outcome failed.</p>
-<p>Trigger-first design hides the failure point behind a wall of green checkmarks. You cannot see the broken assumption until it costs you a client.</p>
-<h2>What Output-First Design Actually Is</h2>
-<p>Output-first design starts at the end. Before you pick a trigger, before you wire any actions, you write down the exact outcome the automation must produce. Not the process. The outcome.</p>
-<p>For example: &#8220;Send a personalized invoice to the client within two hours of contract signature, attach the signed PDF, and log the payment link in the CRM.&#8221; That is the outcome. Everything else is a means to that end.</p>
-<p>When you start with the outcome, you force yourself to confront the hard questions before you build anything. What data does the invoice need? Where does it come from? What format does the accounting software expect? What happens if the PDF is missing? What happens if the client&#8217;s email bounces? What happens if the CRM API rate-limits you?</p>
-<p>The output-first workflow forces you to map the data path backward from the outcome to the trigger. You trace every field, every transformation, every conditional branch. You find the broken assumptions before they cost you anything.</p>
-<h2>The Output-First Audit: Five Questions Before You Build</h2>
-<p>Before you wire a single action, run this audit. It takes ten minutes. It saves ten hours of debugging.</p>
-<p><strong>1. What is the exact outcome?</strong> Write it in one sentence. Not the steps. The result. If you cannot write it in one sentence, you do not understand the automation yet.</p>
-<p><strong>2. What data does the outcome require?</strong> List every field. Client name. Invoice amount. Due date. PDF attachment. CRM ID. If any field is missing, the outcome fails. Identify the source for each field. If a source does not exist, the automation cannot succeed.</p>
-<p><strong>3. What can go wrong between trigger and outcome?</strong> Map the failure modes. API rate limits. Missing attachments. Invalid email addresses. Changed form fields. Third-party downtime. Every failure mode is a branch you must handle. If you do not handle it, the automation breaks silently.</p>
-<p><strong>4. How do you know the outcome succeeded?</strong> What is the verification step? A CRM record created? A confirmation email sent? A database row inserted? Without verification, you have no way to know the automation worked. You only know it ran.</p>
-<p><strong>5. What happens when it fails?</strong> This is where most automations die. A failed automation should notify you. It should log the error. It should attempt a retry. It should never fail silently. If your automation does not have error handling, it is not production-ready.</p>
-<p>Run these five questions on every automation. If you cannot answer them, do not build it yet. The answers will show you where the trigger-first design hides the failure point.</p>
-<h2>When Trigger-First Is Still the Right Call</h2>
-<p>Output-first design is not always the right approach. Sometimes the trigger is the constraint. Sometimes the event is time-sensitive. Sometimes the system does not support output-first mapping.</p>
-<p>For example, a webhook that fires when a payment fails. The trigger is the failure event. You cannot design backward from the outcome because the outcome is the failure itself. In these cases, trigger-first design is acceptable, but you still run the audit. You still map the failure modes. You still verify the outcome.</p>
-<p>Another example: a real-time chat bot that responds to user messages. The trigger is the message. The outcome is the response. The latency constraint is the constraint. You cannot design backward from the outcome because the user is waiting. In these cases, trigger-first design is acceptable, but you still run the audit. You still map the failure modes. You still verify the outcome.</p>
-<p>The key is to recognize when the trigger is the constraint and when it is not. When the trigger is the constraint, trigger-first design is acceptable. When the trigger is not the constraint, output-first design is superior. The audit reveals which case you are in.</p>
-<h2>The Output-First Workflow: A Real Example</h2>
-<p>Let us walk through a real automation. A freelance designer receives a project brief through a Typeform. The brief includes the client&#8217;s name, project type, budget, and deadline. The designer wants an automation that creates a proposal in Google Docs, sends it to the client, and logs the project in Notion.</p>
-<p>Trigger-first design would start with the Typeform submission. Then it would create the Google Doc. Then it would send the email. Then it would log the project. The automation would run. The logs would say Success. The proposal would never send. The client would never receive it. The project would never log.</p>
-<p>Output-first design starts with the outcome: &#8220;Send a personalized proposal to the client within one hour of form submission, attach the signed contract template, and log the project in Notion.&#8221; Then it maps backward. The proposal needs the client&#8217;s name, project type, budget, and deadline. Those fields come from the Typeform. The proposal template comes from Google Drive. The email address comes from the Typeform. The Notion database needs the project name, client name, budget, and deadline. Those fields come from the Typeform. The automation fails if any field is missing. The automation fails if the email address is invalid. The automation fails if the Google Drive template is missing. The automation fails if the Notion API rate-limits. The automation fails if the email bounces. The automation fails if the Typeform submission is malformed.</p>
-<p>Output-first design surfaces every failure mode before you build. Trigger-first design hides them behind green checkmarks. The difference is not technical. It is structural.</p>
-<h2>When Output-First Design Costs You Time</h2>
-<p>Output-first design takes longer upfront. It forces you to think before you build. It forces you to map data paths. It forces you to handle failure modes. It forces you to verify outcomes. That takes time. That takes effort. That takes discipline.</p>
-<p>But it saves time downstream. It saves debugging hours. It saves client calls. It saves reputation. It saves sleep. The upfront cost is the price of reliability. The downstream savings are the return on investment. Most automations that break silently cost more in debugging than they ever would have in upfront design.</p>
-<p>Output-first design is not a luxury. It is a requirement for production-ready automation. If your automation breaks silently, it is not production-ready. If it is not production-ready, it is costing you money. The question is not whether you can afford to design output-first. The question is whether you can afford not to.</p>
-<h2>Conclusion: Build Backward, Test Forward</h2>
-<p>Output-first design flips the automation workflow. It starts with the outcome. It maps backward. It surfaces failure modes. It verifies success. It handles errors. It builds reliability into the structure, not the logs.</p>
-<p>Trigger-first design builds forward. It assumes success. It hides failure. It logs green. It breaks silently. It costs clients. It costs reputation. It costs sleep.</p>
-<p>The choice is not technical. It is structural. Output-first design is the structure that survives production. Trigger-first design is the structure that fails in it. Build backward. Test forward. Your automations will thank you.</p>
-<h2>FAQ</h2>
-<p><strong>Q: What is the difference between trigger-first and output-first automation?</strong><br />A: Trigger-first design starts with the event that wakes the workflow and builds forward. Output-first design starts with the exact outcome and maps backward. Output-first surfaces failure modes before you build. Trigger-first hides them behind green checkmarks.</p>
-<p><strong>Q: When should I use trigger-first design?</strong><br />A: Use trigger-first when the trigger is the constraint. Real-time chat bots. Payment failure webhooks. Time-sensitive events. Even then, run the output-first audit. Map the failure modes. Verify the outcome. Handle errors.</p>
-<p><strong>Q: How do I verify an automation succeeded?</strong><br />A: Add a verification step. Check the CRM record created. Confirm the email sent. Log the database row inserted. Without verification, you only know the automation ran. You do not know it worked.</p>
-<p><strong>Q: What happens when an automation fails?</strong><br />A: A failed automation should notify you. Log the error. Attempt a retry. Never fail silently. If your automation does not have error handling, it is not production-ready.</p>
-<p><strong>Q: Does output-first design take longer?</strong><br />A: Yes. Upfront. It forces you to think before you build. It forces you to map data paths. It forces you to handle failure modes. It forces you to verify outcomes. The upfront cost is the price of reliability. The downstream savings are the return on investment.</p>
-<p>The post <a href="https://techtools.info-verse.org/2026/07/23/output-first-automation-trigger-first-fail/">The Automation That Ran Successfully (And Still Failed)</a> appeared first on <a href="https://techtools.info-verse.org/">Tech Tools Info Verse</a>.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://techtools.info-verse.org/2026/07/23/output-first-automation-trigger-first-fail/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
